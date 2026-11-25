@@ -876,16 +876,21 @@ body[data-ds-dark-theme] .ces-track[data-field-tone="rainbow"]::before {
      NOT 100%: hsl(H 100% 100%) is white, and white times the particle is
      just the particle.
     Hues: the three effort levels below Default, in order - Low, High,
-    Max - taken from the level-text palette (green 2e9e6b = 150, blue
-    3b6fe0 = 221, violet 7a5fc0 = 257) but raised to full saturation so
-    they survive multiply. The band runs Low green to High blue to Max
-    violet and back to green: the first and last stop must match, or the
-    scroll (one full period) would show a seam every cycle. Violet is held
-    across a stretch so all three read as bodies, not as flashes. */
+    Max - from the level-text palette (green 2e9e6b = hue 153, blue 3b6fe0
+    = 221, violet 7a5fc0 = 257). Each gets exactly one third of the cycle
+    (stops at 0, 33.3, 66.7, 100), no hold segment, so the three read as
+    equal bodies. First and last stop match, or the scroll (one full
+    period) would show a seam every cycle.
+    Saturation is deliberately NOT the palette's 43-73%: multiply is a
+    per-channel product, and at low saturation all three channels carry
+    weight, so the tint over the pale violet particles collapses toward
+    one purple and the three levels stop being tellable apart (seen at
+    S 80-90 in an earlier cut). 70% with lightness lifted to 62% keeps the
+    hues legible while reading as mid, not neon; the higher L pays back
+    the darkening multiply costs. */
   background: linear-gradient(90deg,
-    hsl(150 100% 50%) 0%, hsl(185 100% 50%) 20%, hsl(221 100% 50%) 40%,
-    hsl(245 100% 50%) 60%, hsl(257 100% 50%) 72%, hsl(257 100% 50%) 84%,
-    hsl(205 100% 50%) 92%, hsl(150 100% 50%) 100%);
+    hsl(153 70% 62%) 0%, hsl(221 70% 62%) 33.333%, hsl(257 70% 62%) 66.667%,
+    hsl(153 70% 62%) 100%);
   /* Flow: the band is painted twice as wide as its box and slides left by
      one full cycle every 6s (linear, endless). Off for reduced motion. */
   background-size: 200% 100%;
@@ -922,14 +927,14 @@ body[data-ds-dark-theme] .ces-track[data-field-tone="rainbow"]::before {
 }
 /* Dark theme: the particles themselves are dim (body L 20–24%), so a 50%
    lightness overlay multiplies down to near black. Lift the band so the
-   product stays legible; still fully saturated. The background shorthand
+   product stays legible; same hue thirds and 70% saturation as the light
+   theme, lightness raised to 74%. The background shorthand
    resets background-size, so it is restated here or the scroll would paint
    a 100%-wide (non-repeating) band and the flow would jump. */
 body[data-ds-dark-theme] .ces-track[data-field-tone="rainbow"]::after {
   background: linear-gradient(90deg,
-    hsl(150 100% 72%) 0%, hsl(185 100% 72%) 20%, hsl(221 100% 72%) 40%,
-    hsl(245 100% 72%) 60%, hsl(257 100% 72%) 72%, hsl(257 100% 72%) 84%,
-    hsl(205 100% 72%) 92%, hsl(150 100% 72%) 100%);
+    hsl(153 70% 74%) 0%, hsl(221 70% 74%) 33.333%, hsl(257 70% 74%) 66.667%,
+    hsl(153 70% 74%) 100%);
   background-size: 200% 100%;
 }
 @media (prefers-reduced-motion: reduce) {
