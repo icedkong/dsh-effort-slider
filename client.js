@@ -865,38 +865,32 @@ body[data-ds-dark-theme] .ces-track[data-field-tone="rainbow"]::before {
      is positioned relative to its own box, so that would have slid the
      grid.) The thumb-to-right extent is now expressed by the mask instead. */
   content: ""; position: absolute; z-index: 1; inset: 0; pointer-events: none;
-  /* Blend: MULTIPLY, not color. With the wash gone the backdrop under this
-     overlay is the bare (transparent) track wherever there is no particle,
-     and a non-separable blend like color still paints its own hue at full
-     alpha on a transparent backdrop — the rainbow stain that stayed on the
-     track at Auto. Multiply is a multiplicative mode: its result is
-     transparent wherever the backdrop is.
-     Saturation: each stop is a PURE hue (S 100%, L 50%), not a pastel — a
-     pastel times the muted violet particles reads as one purple. L 50%,
-     NOT 100%: hsl(H 100% 100%) is white, and white times the particle is
-     just the particle.
-    Hues: the three effort levels below Default, in order - Low, High,
-    Max - from the level-text palette (green 2e9e6b = hue 153, blue 3b6fe0
-    = 221, violet 7a5fc0 = 257). Each gets exactly one third of the cycle
-    (stops at 0, 33.3, 66.7, 100), no hold segment, so the three read as
-    equal bodies. First and last stop match, or the scroll (one full
-    period) would show a seam every cycle.
-    Saturation is deliberately NOT the palette's 43-73%: multiply is a
-    per-channel product, and at low saturation all three channels carry
-    weight, so the tint over the pale violet particles collapses toward
-    one purple and the three levels stop being tellable apart (seen at
-    S 80-90 in an earlier cut). 70% with lightness lifted to 62% keeps the
-    hues legible while reading as mid, not neon; the higher L pays back
-    the darkening multiply costs. */
+  /* Blend: NORMAL, painted on top - not multiply. Multiply is a per-channel
+     product against the particles, and the particles are violet: a violet
+     particle rgb(140 60 180) carries almost no green, so a green overlay
+     times it came out purple too (measured: the green third landed at hue
+     257 in the dark theme). Every saturation below 100% collapsed the
+     three levels into one purple, and at 100% they only barely read, and
+     still violet-leaning. So the tint is not multiplied any more: it is
+     the level-text palette itself, laid over the cells, and the grid mask
+     decides where it lands. The per-cell light/dark grain lives in that
+     mask's alpha, which under a normal blend is exactly how much palette
+     colour versus underlying particle shows through - so the mosaic
+     texture is kept, only now in the right hue.
+     Palette = the same values the Low / High / Max level text uses, so the
+     Default field reads as the gradient of the three levels below it:
+     light 2e9e6b (hue 153), 3b6fe0 (221), 7a5fc0 (257); dark theme the
+     palette's dark variants. Each level gets exactly one third of the
+     cycle (stops at 0, 33.3, 66.7, 100), no hold segment. First and last
+     stop match, or the scroll (one full period) would show a seam. */
   background: linear-gradient(90deg,
-    hsl(153 70% 62%) 0%, hsl(221 70% 62%) 33.333%, hsl(257 70% 62%) 66.667%,
-    hsl(153 70% 62%) 100%);
+    #2e9e6b 0%, #3b6fe0 33.333%, #7a5fc0 66.667%, #2e9e6b 100%);
   /* Flow: the band is painted twice as wide as its box and slides left by
      one full cycle every 6s (linear, endless). Off for reduced motion. */
   background-size: 200% 100%;
   animation: ces-rainbow-flow 6s linear infinite;
-  mix-blend-mode: multiply;
-  opacity: 1;
+  mix-blend-mode: normal;
+  opacity: 0.9;
   /* Only the CELLS take the tint. drawPixelField paints a translucent
      lavender wash that fills the track edge to edge underneath its grid,
      and the cells themselves are only partly opaque — so multiply alone
@@ -925,16 +919,13 @@ body[data-ds-dark-theme] .ces-track[data-field-tone="rainbow"]::before {
   from { background-position: 0% 0; }
   to { background-position: -200% 0; }
 }
-/* Dark theme: the particles themselves are dim (body L 20–24%), so a 50%
-   lightness overlay multiplies down to near black. Lift the band so the
-   product stays legible; same hue thirds and 70% saturation as the light
-   theme, lightness raised to 74%. The background shorthand
-   resets background-size, so it is restated here or the scroll would paint
-   a 100%-wide (non-repeating) band and the flow would jump. */
+/* Dark theme: the palette's dark variants (the same ones the level text
+   uses in dark mode), same thirds. The background shorthand resets
+   background-size, so it is restated here or the scroll would paint a
+   100%-wide (non-repeating) band and the flow would jump. */
 body[data-ds-dark-theme] .ces-track[data-field-tone="rainbow"]::after {
   background: linear-gradient(90deg,
-    hsl(153 70% 74%) 0%, hsl(221 70% 74%) 33.333%, hsl(257 70% 74%) 66.667%,
-    hsl(153 70% 74%) 100%);
+    #5fcf98 0%, #6f9cf0 33.333%, #cdbfee 66.667%, #5fcf98 100%);
   background-size: 200% 100%;
 }
 @media (prefers-reduced-motion: reduce) {
