@@ -874,11 +874,18 @@ body[data-ds-dark-theme] .ces-track[data-field-tone="rainbow"]::before {
      Saturation: each stop is a PURE hue (S 100%, L 50%), not a pastel — a
      pastel times the muted violet particles reads as one purple. L 50%,
      NOT 100%: hsl(H 100% 100%) is white, and white times the particle is
-     just the particle. */
+     just the particle.
+    Hues: the three effort levels below Default, in order - Low, High,
+    Max - taken from the level-text palette (green 2e9e6b = 150, blue
+    3b6fe0 = 221, violet 7a5fc0 = 257) but raised to full saturation so
+    they survive multiply. The band runs Low green to High blue to Max
+    violet and back to green: the first and last stop must match, or the
+    scroll (one full period) would show a seam every cycle. Violet is held
+    across a stretch so all three read as bodies, not as flashes. */
   background: linear-gradient(90deg,
-    hsl(0 100% 50%) 0%, hsl(30 100% 50%) 7%, hsl(60 100% 50%) 14%, hsl(120 100% 50%) 28%,
-    hsl(180 100% 50%) 42%, hsl(210 100% 50%) 50%, hsl(240 100% 50%) 64%, hsl(270 100% 50%) 78%,
-    hsl(300 100% 50%) 86%, hsl(330 100% 50%) 93%, hsl(360 100% 50%) 100%);
+    hsl(150 100% 50%) 0%, hsl(185 100% 50%) 20%, hsl(221 100% 50%) 40%,
+    hsl(245 100% 50%) 60%, hsl(257 100% 50%) 72%, hsl(257 100% 50%) 84%,
+    hsl(205 100% 50%) 92%, hsl(150 100% 50%) 100%);
   /* Flow: the band is painted twice as wide as its box and slides left by
      one full cycle every 6s (linear, endless). Off for reduced motion. */
   background-size: 200% 100%;
@@ -920,9 +927,9 @@ body[data-ds-dark-theme] .ces-track[data-field-tone="rainbow"]::before {
    a 100%-wide (non-repeating) band and the flow would jump. */
 body[data-ds-dark-theme] .ces-track[data-field-tone="rainbow"]::after {
   background: linear-gradient(90deg,
-    hsl(0 100% 72%) 0%, hsl(30 100% 72%) 7%, hsl(60 100% 72%) 14%, hsl(120 100% 72%) 28%,
-    hsl(180 100% 72%) 42%, hsl(210 100% 72%) 50%, hsl(240 100% 72%) 64%, hsl(270 100% 72%) 78%,
-    hsl(300 100% 72%) 86%, hsl(330 100% 72%) 93%, hsl(360 100% 72%) 100%);
+    hsl(150 100% 72%) 0%, hsl(185 100% 72%) 20%, hsl(221 100% 72%) 40%,
+    hsl(245 100% 72%) 60%, hsl(257 100% 72%) 72%, hsl(257 100% 72%) 84%,
+    hsl(205 100% 72%) 92%, hsl(150 100% 72%) 100%);
   background-size: 200% 100%;
 }
 @media (prefers-reduced-motion: reduce) {
