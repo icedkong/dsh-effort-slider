@@ -115,6 +115,10 @@ git clone https://github.com/icedkong/dsh-effort-slider.git
 dsh plugin --profile <你的 profile> add ./dsh-effort-slider
 ```
 
+> 包名是 `@local/claude-effort-slider`（本地 link 安装用的名字），与 GitHub 仓库名不同，
+> 这是正常的——安装时请指向 clone 出的目录，不要手改 package.json 的 name，
+> 否则 profile 里的注册名会与包名对不上，插件将无法加载。
+
 或在 DSH 的 **Plugins** 面板通过 Add plugin 选择克隆出的目录安装。安装后重启
 DSH 客户端进程（仅关窗口不够）。
 

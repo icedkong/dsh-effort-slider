@@ -1,4 +1,4 @@
 - insert:
     - id: claude-effort-slider
-      name: 'dsh-effort-slider'
+      name: '@local/claude-effort-slider'
       config: {}
