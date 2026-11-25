@@ -1,0 +1,4 @@
+- insert:
+    - id: claude-effort-slider
+      name: 'dsh-effort-slider'
+      config: {}

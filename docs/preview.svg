@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <rect width="640" height="360" rx="14" fill="#1d1a24"/>
+  <!-- composer tool row hint -->
+  <rect x="40" y="230" width="560" height="56" rx="14" fill="#26232e"/>
+  <!-- effort chip -->
+  <rect x="56" y="244" width="86" height="28" rx="7" fill="#332d40"/>
+  <path d="M66 252.5l1.6 4.4 4.4 1.6-4.4 1.6-1.6 4.4-1.6-4.4-4.4-1.6 4.4-1.6 1.6-4.4Z" fill="#a88ccf"/>
+  <text x="78" y="263" font-family="ui-sans-serif, -apple-system, sans-serif" font-size="12" fill="#c9c4d4">Max</text>
+  <path d="m126 256 4 4 4-4" stroke="#8a8494" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- popover panel -->
+  <rect x="52" y="52" width="360" height="164" rx="16" fill="#2b2733" stroke="#3a3149"/>
+  <text x="72" y="82" font-family="ui-sans-serif, -apple-system, sans-serif" font-size="13" fill="#8a8494">Effort</text>
+  <text x="118" y="82" font-family="ui-sans-serif, -apple-system, sans-serif" font-size="13" fill="#a88ccf">Max</text>
+  <text x="72" y="106" font-family="ui-sans-serif, -apple-system, sans-serif" font-size="11" fill="#6f6a7c">Faster</text>
+  <text x="368" y="106" font-family="ui-sans-serif, -apple-system, sans-serif" font-size="11" fill="#6f6a7c">Smarter</text>
+  <!-- ultracode pixel track -->
+  <rect x="72" y="118" width="320" height="26" rx="9" fill="#332d40"/>
+  <g fill="#8b6cc9">
+    <rect x="180" y="122" width="4.2" height="4.2" rx="1"/><rect x="186" y="128" width="4.2" height="4.2" rx="1"/>
+    <rect x="196" y="122" width="4.2" height="4.2" rx="1"/><rect x="204" y="130" width="4.2" height="4.2" rx="1"/>
+    <rect x="214" y="124" width="4.2" height="4.2" rx="1"/><rect x="222" y="129" width="4.2" height="4.2" rx="1"/>
+    <rect x="232" y="122" width="4.2" height="4.2" rx="1"/><rect x="240" y="127" width="4.2" height="4.2" rx="1"/>
+    <rect x="250" y="131" width="4.2" height="4.2" rx="1"/><rect x="258" y="123" width="4.2" height="4.2" rx="1"/>
+    <rect x="268" y="128" width="4.2" height="4.2" rx="1"/><rect x="276" y="122" width="4.2" height="4.2" rx="1"/>
+    <rect x="286" y="126" width="4.2" height="4.2" rx="1"/><rect x="294" y="131" width="4.2" height="4.2" rx="1"/>
+    <rect x="304" y="123" width="4.2" height="4.2" rx="1"/><rect x="312" y="128" width="4.2" height="4.2" rx="1"/>
+    <rect x="322" y="122" width="4.2" height="4.2" rx="1"/><rect x="330" y="130" width="4.2" height="4.2" rx="1"/>
+    <rect x="340" y="125" width="4.2" height="4.2" rx="1"/><rect x="348" y="129" width="4.2" height="4.2" rx="1"/>
+    <rect x="358" y="122" width="4.2" height="4.2" rx="1"/><rect x="366" y="127" width="4.2" height="4.2" rx="1"/>
+    <rect x="374" y="131" width="4.2" height="4.2" rx="1"/><rect x="382" y="123" width="4.2" height="4.2" rx="1"/>
+  </g>
+  <g fill="#d8cce4">
+    <rect x="300" y="123" width="4.2" height="4.2" rx="1"/><rect x="338" y="129" width="4.2" height="4.2" rx="1"/>
+  </g>
+  <rect x="362" y="115" width="24" height="26" rx="8" fill="#f2f0f4" stroke="rgba(0,0,0,0.4)"/>
+  <!-- caption -->
+  <text x="72" y="196" font-family="ui-sans-serif, -apple-system, sans-serif" font-size="11" fill="#6f6a7c">Drag: magnetic preview · Release: spring snap, commits once · Last stop: Ultracode pixels</text>
+</svg>

@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Effort slider",
+    "description": "Replaces the 「推理等级」 row of the native model menu with a Claude Code Desktop-style slider, in place: the off / Default / Low / High / Max slider is visible as soon as the menu opens, maps to the selected model's real effort levels, and writes through the same session path as the native picker. Each stop has its own particle hue (rainbow / green / blue / violet), the level text takes the field colour, and the last picked level is remembered per model. The Model row keeps switching models.",
+    "detail": "docs/DETAIL.md"
+  }
+}

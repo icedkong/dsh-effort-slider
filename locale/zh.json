@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Effort 滑条",
+    "description": "把原生模型菜单里「推理等级」那一行原位替换为 Claude Code Desktop 风格的滑杆：打开菜单即见 off / Default / Low / High / Max 五档，对应当前模型真实的推理等级，通过原生同一条通路写入会话；各档拥有专属粒子色（彩虹 / 绿 / 蓝 / 紫），档位文字随场色着色，并按模型记忆上次档位。「模型」行保持原样可切换模型。",
+    "detail": "docs/DETAIL.md"
+  }
+}
